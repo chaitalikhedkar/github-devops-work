@@ -1,0 +1,130 @@
+Git Command Cheat Sheet
+🔧 Setup
+git --version
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --list
+
+📁 Start a Repository
+git init
+git clone <repository-url>
+
+📊 Check Status
+git status
+git log
+git log --oneline
+git diff
+
+➕ Add Files
+git add filename.py
+git add .
+git add -A
+
+💾 Commit
+git commit -m "Your commit message"
+git commit -am "Your commit message"
+
+🌐 Remote Repository
+git remote -v
+git remote add origin <repository-url>
+git remote remove origin
+
+⬆️ Push
+git push
+git push -u origin main
+
+
+After setting upstream once:
+
+git push
+
+⬇️ Pull
+git pull
+git pull origin main
+
+🌿 Branches
+git branch
+git branch -a
+git branch new-branch
+git switch new-branch
+git switch -c new-branch
+git switch main
+git branch -d new-branch
+
+
+Older equivalent:
+
+git checkout new-branch
+git checkout -b new-branch
+
+🔀 Merge
+git switch main
+git merge new-branch
+
+❌ Undo Changes
+
+Discard changes in a file:
+
+git restore filename.py
+
+
+Unstage a file:
+
+git restore --staged filename.py
+
+
+Undo the latest commit but keep changes:
+
+git reset --soft HEAD~1
+
+
+Undo the latest commit and discard changes:
+
+git reset --hard HEAD~1
+
+
+⚠️ Be careful with --hard because it can permanently remove uncommitted work.
+
+🏷️ Tags
+git tag
+git tag v1.0.0
+git push origin v1.0.0
+
+🧹 Useful Cleanup
+git branch -d branch-name
+git fetch --prune
+git clean -n
+
+
+git clean -n shows what would be deleted without actually deleting it.
+
+🔍 Find Things
+git log --oneline --all
+git log --oneline --graph --decorate --all
+git show <commit-id>
+git blame filename.py
+
+🚀 Typical Git Workflow
+
+For everyday development, you'll often use:
+
+git status
+git add .
+git commit -m "Add new feature"
+git push
+
+
+When starting work:
+
+git pull
+git switch -c feature-name
+
+
+When finished:
+
+git add .
+git commit -m "Complete feature"
+git push -u origin feature-name
+
+
+Most important commands to remember: git status → git add → git commit → git push → git pull → git switch.
